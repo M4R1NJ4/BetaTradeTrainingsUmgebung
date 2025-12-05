@@ -13,13 +13,13 @@ $defaultPassword = ConvertTo-SecureString "Welcome123!" -AsPlainText -Force
 
 # Prüfen, ob die CSV existiert
 if (-not (Test-Path $csvPath)) {
-    Write-Error "❌ CSV-Datei wurde nicht gefunden unter: $csvPath"
+    Write-Error "CSV-Datei wurde nicht gefunden unter: $csvPath"
     exit
 }
 
 # Active Directory Modul prüfen und laden
 if (-not (Get-Module ActiveDirectory -ListAvailable)) {
-    Write-Error "❌ Das ActiveDirectory-Modul ist nicht installiert. Bitte RSAT installieren!"
+    Write-Error "Das ActiveDirectory-Modul ist nicht installiert. Bitte RSAT installieren."
     exit
 }
 Import-Module ActiveDirectory
@@ -74,17 +74,17 @@ foreach ($user in $users) {
                 -Enabled $true `
                 -ChangePasswordAtLogon $true
 
-            $msg = "✅ Benutzer $($user.Benutzername) wurde erfolgreich in $ou angelegt."
+            $msg = "Benutzer $($user.Benutzername) wurde erfolgreich in $ou angelegt."
             Write-Host $msg -ForegroundColor Green
             $msg | Out-File -FilePath $logFile -Append -Encoding utf8
         }
         catch {
-            $msg = "❌ Fehler beim Anlegen von $($user.Benutzername): $_"
+            $msg = "Fehler beim Anlegen von $($user.Benutzername): $_"
             Write-Host $msg -ForegroundColor Red
             $msg | Out-File -FilePath $logFile -Append -Encoding utf8
         }
     } else {
-        $msg = "⚠️ Benutzer $($user.Benutzername) existiert bereits."
+        $msg = "Benutzer $($user.Benutzername) existiert bereits."
         Write-Host $msg -ForegroundColor Yellow
         $msg | Out-File -FilePath $logFile -Append -Encoding utf8
     }
@@ -92,4 +92,5 @@ foreach ($user in $users) {
 
 "--- Benutzeranlage abgeschlossen: $(Get-Date) ---" | Out-File -FilePath $logFile -Append -Encoding utf8
 Write-Host "`nAlle Ergebnisse wurden in $logFile protokolliert." -ForegroundColor Cyan
+
 
