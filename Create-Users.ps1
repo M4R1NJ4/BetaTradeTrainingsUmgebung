@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Continue"
 
-$CSVPath = "C:\Scripts\BetaTrade_Mitarbeiterliste_net05-in.csv"
+$CSVPath = "C:\Scripts\BetaTrade_Mitarbeiterliste_net07-in.csv"
 ###ersetzen durch manuelle abfrage
 ###pfad soll bereits übergeben werden
 ###schrittweise Ausgabe
@@ -11,8 +11,8 @@ $CSVPath = "C:\Scripts\BetaTrade_Mitarbeiterliste_net05-in.csv"
 Write-Host "Script starting..."
 Write-Host "CSV path: $CSVPath"
 
-$Domain = "net05.beta"
-$DomainDN = "DC=net05,DC=beta"
+$Domain = "net07.beta"
+$DomainDN = "DC=net07,DC=beta"
 $Password = ConvertTo-SecureString -String "BetaTrade2025!" -AsPlainText -Force
 
 if (-not (Test-Path $CSVPath)) {
