@@ -1,4 +1,9 @@
 To do:
 
+#Überprüfen der Accounts -> Alle OU
+Get-ADUser -Filter * -SearchBase "OU=Corporate,DC=net07,DC=beta" -Properties EmailAddress,UserPrincipalName | Select Name,SamAccountName,UserPrincipalName,EmailAddress
+
 #
-Get-ADUser -Filter * -SearchBase "OU=Corporate,DC=netxx,DC=beta" -Properties EmailAddress,UserPrincipalName | Select Name,SamAccountName,UserPrincipalName,EmailAddress
+Get-ADGroupMember -Identity "Corporate-Role"
+Get-ADGroupMember -Identity "IT-Role"
+Get-ADGroupMember -Identity "Marketing-Role"
