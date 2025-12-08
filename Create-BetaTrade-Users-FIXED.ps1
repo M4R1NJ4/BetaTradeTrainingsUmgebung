@@ -40,7 +40,7 @@ Write-Host ""
 $count = 0
 
 foreach ($user in $Users) {
-    $username = $user.username.Trim()
+    $username = $user.Benutzername.Trim()
     $firstname = $user.Vorname.Trim()
     $lastname = $user.Nachname.Trim()
     $email = $user.Email.Trim()
