@@ -1,0 +1,4 @@
+To do:
+
+#
+Get-ADUser -Filter * -SearchBase "OU=Corporate,DC=netxx,DC=beta" -Properties EmailAddress,UserPrincipalName | Select Name,SamAccountName,UserPrincipalName,EmailAddress
