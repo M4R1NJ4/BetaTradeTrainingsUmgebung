@@ -1,6 +1,12 @@
 $ErrorActionPreference = "Continue"
 
 $CSVPath = "C:\Scripts\BetaTrade_Mitarbeiterliste_net05-in.csv"
+###ersetzen durch manuelle abfrage
+###pfad soll bereits übergeben werden
+###schrittweise Ausgabe
+###rückmeldeung eingelsene Datei -> summe der Nutzer
+##dry run option -> rückmeldung vor löschen und überschreiben
+###rückgabe der Liste nach Ausführen
 
 Write-Host "Script starting..."
 Write-Host "CSV path: $CSVPath"
